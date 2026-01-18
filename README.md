@@ -9,7 +9,6 @@
 * **Responsive Design:** Optimasi tampilan untuk berbagai perangkat.
 * **Easy Integration:** Kompatibel dengan plugin CKAN standar lainnya.
 
----
 
 ## 📋 Requirements
 
@@ -21,7 +20,6 @@ Ekstensi ini telah diuji dan berjalan optimal pada versi CKAN berikut:
 | 2.9 | Yes |
 | 2.10 | **Tested (Recommended)** |
 
----
 
 ## 🚀 Installation
 
@@ -61,9 +59,6 @@ sudo service apache2 reload
 ```
 
 
-
----
-
 ## ⚙️ Config Settings
 
 Saat ini tidak ada pengaturan tambahan yang wajib diisi. Namun, Anda dapat menyiapkan *placeholder* berikut jika diperlukan di masa mendatang:
@@ -74,7 +69,6 @@ Saat ini tidak ada pengaturan tambahan yang wajib diisi. Namun, Anda dapat menyi
 
 ```
 
----
 
 ## 👨‍💻 Developer Installation
 
@@ -88,7 +82,6 @@ pip install -r dev-requirements.txt
 
 ```
 
----
 
 ## 🧪 Tests
 
@@ -99,7 +92,6 @@ pytest --ckan-ini=test.ini
 
 ```
 
----
 
 ## 📦 Releasing a New Version
 
@@ -134,12 +126,6 @@ git push --tags
 
 ```
 
-
-
----
-
 ## 📄 License
 
 Ekstensi ini dilisensikan di bawah [AGPL v3.0](https://www.gnu.org/licenses/agpl-3.0.en.html).
-
----
