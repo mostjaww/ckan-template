@@ -69,10 +69,10 @@ None at present
 
 ## Developer installation
 
-To install ckanext-temabaru for development, activate your CKAN virtualenv and
+To install ckanext-template for development, activate your CKAN virtualenv and
 do:
 
-    git clone https://github.com/kickymaulana/ckanext-temabaru.git
+    git clone https://github.com/mostjaww/ckanext-template.git
     cd ckanext-temabaru
     pip install -e .
     pip install -r dev-requirements.txt
