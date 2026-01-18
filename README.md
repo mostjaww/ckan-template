@@ -1,122 +1,145 @@
-# ckanext-temabaru
+# ckanext-template
 
-**TODO:** Put a description of your extension here:  What does it do? What features does it have? Consider including some screenshots or embedding a video!
+**ckanext-template** adalah ekstensi CKAN yang dirancang khusus untuk kustomisasi tampilan (theming). Ekstensi ini memungkinkan modifikasi antarmuka pengguna, penambahan aset CSS/JS kustom, dan perombakan struktur template standar CKAN agar sesuai dengan identitas visual organisasi Anda.
 
+## ✨ Fitur Utama
 
-## Requirements
+* **Custom Templates:** Override template inti CKAN dengan mudah.
+* **Asset Management:** Integrasi CSS dan JavaScript kustom.
+* **Responsive Design:** Optimasi tampilan untuk berbagai perangkat.
+* **Easy Integration:** Kompatibel dengan plugin CKAN standar lainnya.
 
-**TODO:** For example, you might want to mention here which versions of CKAN this
-extension works with.
+---
 
-If your extension works across different versions you can add the following table:
+## 📋 Requirements
 
-Compatibility with core CKAN versions:
+Ekstensi ini telah diuji dan berjalan optimal pada versi CKAN berikut:
 
-| CKAN version    | Compatible?   |
-| --------------- | ------------- |
-| 2.6 and earlier | not tested    |
-| 2.7             | not tested    |
-| 2.8             | not tested    |
-| 2.9             | not tested    |
-| 2.10            | tested        |
+| CKAN Version | Compatible? |
+| --- | --- |
+| 2.8 and earlier | Not Tested |
+| 2.9 | Yes |
+| 2.10 | **Tested (Recommended)** |
 
-Suggested values:
+---
 
-* "yes"
-* "not tested" - I can't think of a reason why it wouldn't work
-* "not yet" - there is an intention to get it working
-* "no"
+## 🚀 Installation
 
+Ikuti langkah-langkah berikut untuk menginstal **ckanext-temabaru**:
 
-## Installation
+1. **Aktifkan Virtual Environment CKAN Anda:**
+```bash
+. /usr/lib/ckan/default/bin/activate
 
-**TODO:** Add any additional install steps to the list below.
-   For example installing any non-Python dependencies or adding any required
-   config settings.
-
-To install ckanext-temabaru:
-
-1. Activate your CKAN virtual environment, for example:
-
-     . /usr/lib/ckan/default/bin/activate
-
-2. Clone the source and install it on the virtualenv
-
-    git clone https://github.com/kickymaulana/ckanext-temabaru.git
-    cd ckanext-temabaru
-    pip install -e .
-	pip install -r requirements.txt
-
-3. Add `temabaru` to the `ckan.plugins` setting in your CKAN
-   config file (by default the config file is located at
-   `/etc/ckan/default/ckan.ini`).
-
-4. Restart CKAN. For example if you've deployed CKAN with Apache on Ubuntu:
-
-     sudo service apache2 reload
+```
 
 
-## Config settings
+2. **Clone dan Instal Ekstensi:**
+```bash
+git clone https://github.com/mostjaww/ckanext-template.git
+cd ckanext-temabaru
+pip install -e .
+pip install -r requirements.txt
 
-None at present
-
-**TODO:** Document any optional config settings here. For example:
-
-	# The minimum number of hours to wait before re-checking a resource
-	# (optional, default: 24).
-	ckanext.temabaru.some_setting = some_default_value
-
-
-## Developer installation
-
-To install ckanext-template for development, activate your CKAN virtualenv and
-do:
-
-    git clone https://github.com/mostjaww/ckanext-template.git
-    cd ckanext-temabaru
-    pip install -e .
-    pip install -r dev-requirements.txt
+```
 
 
-## Tests
+3. **Konfigurasi CKAN:**
+Buka file konfigurasi CKAN Anda (biasanya `/etc/ckan/default/ckan.ini`) dan tambahkan `temabaru` ke daftar plugin:
+```ini
+ckan.plugins = ... temabaru
 
-To run the tests, do:
-
-    pytest --ckan-ini=test.ini
+```
 
 
-## Releasing a new version of ckanext-temabaru
+4. **Restart CKAN:**
+```bash
+sudo service apache2 reload
+# Atau jika menggunakan supervisor:
+# sudo supervisorctl restart ckan-uwsgi
 
-If ckanext-temabaru should be available on PyPI you can follow these steps to publish a new version:
+```
 
-1. Update the version number in the `pyproject.toml` file. See [PEP 440](http://legacy.python.org/dev/peps/pep-0440/#public-version-identifiers) for how to choose version numbers.
 
-2. Make sure you have the latest version of necessary packages:
 
-    pip install --upgrade setuptools wheel twine
+---
 
-3. Create a source and binary distributions of the new version:
+## ⚙️ Config Settings
 
-       python -m build && twine check dist/*
+Saat ini tidak ada pengaturan tambahan yang wajib diisi. Namun, Anda dapat menyiapkan *placeholder* berikut jika diperlukan di masa mendatang:
 
-   Fix any errors you get.
+```ini
+# Contoh pengaturan opsional (saat ini belum digunakan)
+# ckanext.temabaru.custom_logo = path/to/logo.png
 
-4. Upload the source distribution to PyPI:
+```
 
-       twine upload dist/*
+---
 
-5. Commit any outstanding changes:
+## 👨‍💻 Developer Installation
 
-       git commit -a
-       git push
+Untuk melakukan pengembangan (development), gunakan langkah berikut:
 
-6. Tag the new release of the project on GitHub with the version number from
-   the `setup.py` file. For example if the version number in `setup.py` is
-   0.0.1 then do:
+```bash
+git clone https://github.com/mostjaww/ckanext-template.git
+cd ckanext-temabaru
+pip install -e .
+pip install -r dev-requirements.txt
 
-       git tag 0.0.1
-       git push --tags
+```
 
-## License
+---
 
-[AGPL](https://www.gnu.org/licenses/agpl-3.0.en.html)
+## 🧪 Tests
+
+Untuk menjalankan pengujian (automated tests), gunakan perintah:
+
+```bash
+pytest --ckan-ini=test.ini
+
+```
+
+---
+
+## 📦 Releasing a New Version
+
+Langkah-langkah untuk mempublikasikan versi baru ke PyPI:
+
+1. Update nomor versi di `pyproject.toml` atau `setup.py`.
+2. Pastikan *build tools* sudah terbaru:
+```bash
+pip install --upgrade setuptools wheel twine build
+
+```
+
+
+3. Build distribusi:
+```bash
+python -m build && twine check dist/*
+
+```
+
+
+4. Upload ke PyPI:
+```bash
+twine upload dist/*
+
+```
+
+
+5. Tag versi di GitHub:
+```bash
+git tag 0.0.1
+git push --tags
+
+```
+
+
+
+---
+
+## 📄 License
+
+Ekstensi ini dilisensikan di bawah [AGPL v3.0](https://www.gnu.org/licenses/agpl-3.0.en.html).
+
+---
