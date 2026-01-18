@@ -1,6 +1,6 @@
-# ckanext-template
+# CKAN Template
 
-**ckanext-template** adalah ekstensi CKAN yang dirancang khusus untuk kustomisasi tampilan (theming). Ekstensi ini memungkinkan modifikasi antarmuka pengguna, penambahan aset CSS/JS kustom, dan perombakan struktur template standar CKAN agar sesuai dengan identitas visual organisasi Anda.
+**CKAN Template** adalah ekstensi CKAN yang dirancang khusus untuk kustomisasi tampilan (theming). Ekstensi ini memungkinkan modifikasi antarmuka pengguna, penambahan aset CSS/JS kustom, dan perombakan struktur template standar CKAN agar sesuai dengan identitas visual organisasi Anda.
 
 ## ✨ Fitur Utama
 
